@@ -15,7 +15,7 @@ namespace TUtils.Database
         /// </summary>
         /// <param name="scriptResourcePath"></param>
         /// <returns></returns>
-        internal static void LaunchScript(string scriptResourcePath)
+        public static void LaunchScript(string scriptResourcePath)
         {
             string script = ReadScript(scriptResourcePath);
             DBSingleton.Wrapper.AttemptNonQuery(script, (rowsAffected) => true);
@@ -26,7 +26,7 @@ namespace TUtils.Database
         /// </summary>
         /// <param name="scriptResourcePath"></param>
         /// <returns></returns>
-        internal static string ReadScript(string scriptResourcePath)
+        public static string ReadScript(string scriptResourcePath)
         {
             Assembly tbotAssembly = Assembly.GetExecutingAssembly();
             Stream scriptStream = tbotAssembly.GetManifestResourceStream(scriptResourcePath);
@@ -37,7 +37,7 @@ namespace TUtils.Database
         /// <summary>
         /// Converts the contents of the data row via casting to their proper objects.
         /// </summary>
-        internal static T1 CastResults<T1>(IDataRow row)
+        public static T1 CastResults<T1>(IDataRow row)
         {
             return row.GetByColumnIndex<T1>(0);
         }
@@ -45,7 +45,7 @@ namespace TUtils.Database
         /// <summary>
         /// Converts the contents of the data row via casting to their proper objects.
         /// </summary>
-        internal static Tuple<T1, T2> CastResults<T1, T2>(IDataRow row)
+        public static Tuple<T1, T2> CastResults<T1, T2>(IDataRow row)
         {
             return new Tuple<T1, T2>(row.GetByColumnIndex<T1>(0), row.GetByColumnIndex<T2>(1));
         }
@@ -53,7 +53,7 @@ namespace TUtils.Database
         /// <summary>
         /// Converts the contents of the data row via casting to their proper objects.
         /// </summary>
-        internal static Tuple<T1, T2, T3> CastResults<T1, T2, T3>(IDataRow row)
+        public static Tuple<T1, T2, T3> CastResults<T1, T2, T3>(IDataRow row)
         {
             return new Tuple<T1, T2, T3>(row.GetByColumnIndex<T1>(0), row.GetByColumnIndex<T2>(1), row.GetByColumnIndex<T3>(2));
         }

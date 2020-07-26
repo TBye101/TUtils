@@ -3,8 +3,8 @@ namespace TUtils.Database
     /// <summary>
     /// Holds the database connection object.
     /// </summary>
-    internal class DBSingleton
+    public class DBSingleton
     {
-        internal static IDatabaseWrapper Wrapper;
+        public static IDatabaseWrapper Wrapper;
     }
 }

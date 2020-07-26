@@ -6,7 +6,7 @@ namespace TUtils.Database
     ///<summary>
     ///Used to encapsulate database implementation details.
     ///<summary>
-    internal interface IDatabaseWrapper
+    public interface IDatabaseWrapper
     {
         ///<summary>
         ///Executes the specified query and utilizes the provided function to parse the data into useful objects.

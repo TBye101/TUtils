@@ -5,7 +5,7 @@
     <PackageId>TBye.TUtils</PackageId>
     <PackageTags>C#; Extensions; Logging;</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.3.0</Version>
+    <Version>0.3.1</Version>
     <Authors>TBye</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Platforms>AnyCPU;</Platforms>

@@ -10,12 +10,12 @@ namespace TUtils.Database
     /// <summary>
     /// An implementation of our database wrapper for MS SQL.
     /// </summary>
-    internal class MsSqlWrapper : IDatabaseWrapper, IDisposable
+    public class MsSqlWrapper : IDatabaseWrapper, IDisposable
     {
         private SqlConnection Connection { get; }
         private static readonly object SyncObject = new object();
 
-        internal MsSqlWrapper(SqlConnection dbConnection)
+        public MsSqlWrapper(SqlConnection dbConnection)
         {
             this.Connection = dbConnection;
             this.Connection.Open();
