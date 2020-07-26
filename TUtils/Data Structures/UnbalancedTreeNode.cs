@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TUtils.IO;
 
 namespace TUtils.Data_Structures
 {
@@ -23,12 +24,14 @@ namespace TUtils.Data_Structures
 
             public void AddChild(UnbalancedTreeNode<T> child)
             {
+                child.Parent = this;
                 this.Children.Add(child);
             }
 
             public void RemoveChild(UnbalancedTreeNode<T> child)
             {
                 this.Children.Remove(child);
+                child.Parent = null;
             }
 
             public IReadOnlyList<UnbalancedTreeNode<T>> GetChildren()
@@ -49,6 +52,27 @@ namespace TUtils.Data_Structures
             public bool Equals(UnbalancedTreeNode<T> other)
             {
                 return this.Value.Equals(other.Value);
+            }
+
+            /// <summary>
+            /// Prints this tree to the specified log file.
+            /// </summary>
+            /// <param name="indent"></param>
+            public void LogTree(Log log, string indent = "")
+            {
+                this.PrintNode(this, true, log, indent);
+            }
+
+            //Adapted from: https://stackoverflow.com/a/8567550
+            protected void PrintNode(UnbalancedTreeNode<T> other, bool last, Log log, string indent = "")
+            {
+                log.Write(LogLevel.Debug, indent + "+- " + string.Format("[{0}]", other.Value));
+                indent += last ? "   " : "|  ";
+
+                for (int i = 0; i < other.Children.Count; i++)
+                {
+                    PrintNode(other.Children[i], i == other.Children.Count - 1, log, indent);
+                }
             }
         }
 }

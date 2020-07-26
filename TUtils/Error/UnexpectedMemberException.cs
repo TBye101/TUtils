@@ -9,7 +9,8 @@
         {
         }
 
-        public UnexpectedMemberException(string message, System.Exception innerException) : base(message, innerException)
+        public UnexpectedMemberException(string message, System.Exception innerException)
+         : base(message, innerException)
         {
         }
     }

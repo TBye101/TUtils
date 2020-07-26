@@ -5,10 +5,10 @@
     <PackageId>TBye.TUtils</PackageId>
     <PackageTags>C#; Extensions; Logging;</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.2</Version>
+    <Version>0.3.0</Version>
     <Authors>TBye</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Platforms>AnyCPU;x64</Platforms>
+    <Platforms>AnyCPU;</Platforms>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>
       A small library that does some generic functionality that is often missing or time consuming to write again.
@@ -24,11 +24,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="161.41011.9" />
     <PackageReference Include="Plugin.NetStandardStorage" Version="1.0.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="LICENSE" Pack="true" PackagePath=""/>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

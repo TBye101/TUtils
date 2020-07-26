@@ -39,15 +39,12 @@ namespace TUtils.Collections.Enumeration
             }
         }
 
-        /// <summary>
-        /// Enables modification while iterating.
-        /// </summary>
+        /// <param name="enumerable"></param>
+        /// <param name="action">An action to execute on each item in the collection.</param>
         /// <typeparam name="T"></typeparam>
-        /// <param name="collection"></param>
-        /// <param name="action">An action to execute on each item in the collection. <typeof item in collection, index of item in collection></typeof></param>
-        public static void Foreach<T>(this Array array, Action<T> action)
+        public static void Foreach<T>(this IEnumerable<T> enumerable, Action<T> action)
         {
-            foreach (T item in array)
+            foreach (T item in enumerable)
             {
                 action.Invoke(item);
             }
